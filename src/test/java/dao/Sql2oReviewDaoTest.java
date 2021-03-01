@@ -1,17 +1,28 @@
-
+//import the data access object dao
 package dao;
+//import models package which contains Java Class Restaurant
+import models.Restaurant;
+//import models package which contains Review Class
+import models.Review;
+//import the org.junit Test After Class.The After class is used package Annotating a public static void method with
+// @AfterClass causes that method to be run after all the tests in the class have been run.
+import org.junit.After;
+//If you allocate expensive external resources in a BeforeClass method you need to release them after all the tests in the class have run
+import org.junit.Before;
+//imports all the libraries to be used for testing in sql2oReviewDaoTest.
+import org.junit.Test;
+//import Connection class.This will ensure that the program is
+// able to access the database
+import org.sql2o.Connection;
+//
+import org.sql2o.Sql2o;
+//
+import static org.junit.Assert.*;
+//
 
-        import models.Restaurant;
-        import models.Review;
-        import org.junit.After;
-        import org.junit.Before;
-        import org.junit.Test;
-        import org.sql2o.Connection;
-        import org.sql2o.Sql2o;
-
-        import static org.junit.Assert.*;
-
-public class Sql2oReviewDaoTest {
+//
+public class Sql2oReviewDaoTest
+{
     private Connection conn;
     private Sql2oReviewDao reviewDao;
 
@@ -26,25 +37,29 @@ public class Sql2oReviewDaoTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() throws Exception
+    {
         conn.close();
     }
 
     @Test
-    public void addingReviewSetsId() throws Exception {
+    public void addingReviewSetsId() throws Exception
+    {
         Review testReview = setupReview();
         assertEquals(1, testReview.getId());
     }
 
     @Test
-    public void getAll() throws Exception {
+    public void getAll() throws Exception
+    {
         Review review1 = setupReview();
         Review review2 = setupReview();
         assertEquals(2, reviewDao.getAll().size());
     }
 
     @Test
-    public void getAllReviewsByRestaurant() throws Exception {
+    public void getAllReviewsByRestaurant() throws Exception
+    {
         Restaurant testRestaurant = setupRestaurant();
         Restaurant otherRestaurant = setupRestaurant(); //add in some extra data to see if it interferes
         Review review1 = setupReviewForRestaurant(testRestaurant);
@@ -54,7 +69,8 @@ public class Sql2oReviewDaoTest {
     }
 
     @Test
-    public void deleteById() throws Exception {
+    public void deleteById() throws Exception
+    {
         Review testReview = setupReview();
         Review otherReview = setupReview();
         assertEquals(2, reviewDao.getAll().size());
@@ -63,7 +79,8 @@ public class Sql2oReviewDaoTest {
     }
 
     @Test
-    public void clearAll() throws Exception {
+    public void clearAll() throws Exception
+    {
         Review testReview = setupReview();
         Review otherReview = setupReview();
         reviewDao.clearAll();
@@ -84,7 +101,8 @@ public class Sql2oReviewDaoTest {
         return review;
     }
 
-    public Restaurant setupRestaurant() {
+    public Restaurant setupRestaurant()
+    {
         Restaurant restaurant = new Restaurant("Fish Witch", "214 NE Broadway", "97232", "503-402-9874", "http://fishwitch.com", "hellofishy@fishwitch.com");
         restaurantDao.add(restaurant);
         return restaurant;
