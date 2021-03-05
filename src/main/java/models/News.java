@@ -1,6 +1,6 @@
 package models;
 
-public class Restaurant
+public class News
 {
     private String name;
     private String address;
@@ -11,7 +11,7 @@ public class Restaurant
     private int id;
 
 
-    public Restaurant(String name, String address, String zipcode, String phone)
+    public News(String name, String address, String zipcode, String phone)
     {
         this.name = name;
         this.address = address;
@@ -21,7 +21,7 @@ public class Restaurant
         this.email = "no email available";
     }
 
-    public Restaurant(String fish_witch, String s, String s1, String s2, String s3, String s4)
+    public News(String fish_witch, String s, String s1, String s2, String s3, String s4)
     {
     }
 

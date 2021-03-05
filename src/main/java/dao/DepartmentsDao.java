@@ -1,9 +1,10 @@
 package dao;
 
 import models.Departments;
+
 import java.util.List;
 
-public interface FoodtypeDao
+public interface DepartmentsDao
 {
 
     //create

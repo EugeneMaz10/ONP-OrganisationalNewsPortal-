@@ -1,11 +1,11 @@
 package models;
 
-public class Foodtype
+public class Departments
 {
     private String name;
     private int id;
 
-    public Foodtype(String name) {
+    public Departments(String name) {
         this.name = name;
     }
 }

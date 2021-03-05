@@ -1,8 +1,8 @@
 package models;
 
 
-//Class Review is defined
-public class Review
+//Class Users is defined
+public class Users
 {
     //Private String content
     private String content;
@@ -13,9 +13,9 @@ public class Review
     //Private integer id is now defined here
     private int id;
     //
-    private int restaurantId; //will be used to connect Restaurant to Review (one-to-many)
+    private int restaurantId; //will be used to connect News to Users (one-to-many)
 
-    public Review(String content, String writtenBy, int rating, int restaurantId) {
+    public Users(String content, String writtenBy, int rating, int restaurantId) {
         this.content = content;
         this.writtenBy = writtenBy;
         this.rating = rating;

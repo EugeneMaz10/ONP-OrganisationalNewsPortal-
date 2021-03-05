@@ -1,12 +1,10 @@
 package dao;
 
-
-//import models News
 import models.News;
-//import java.util.List
+
 import java.util.List;
 
-public interface RestaurantDao
+public interface NewsDao
 {
 
     //create
