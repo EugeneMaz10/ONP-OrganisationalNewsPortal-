@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS foodtypes
  name VARCHAR
 );
 
-CREATE TABLE IF NOT EXISTS reviews (
+CREATE TABLE IF NOT EXISTS reviews
+(
  id int PRIMARY KEY auto_increment,
  writtenby VARCHAR,
  content VARCHAR,

@@ -1,6 +1,9 @@
 package dao;
 
+
+//import models Restaurant
 import models.Restaurant;
+//import java.util.List
 import java.util.List;
 
 public interface RestaurantDao
